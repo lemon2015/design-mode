@@ -1,13 +1,15 @@
 <?php
 require_once './Creator.php';
-require_once './CarProduct.php';
+require_once './Product.php';
 
-class CarFactory extends Creator
+class CountryFactory extends Creator
 {
-  protected function factoryMethod()
-  {
+    private $country;
+
+    protected function factoryMethod(Product $product)
+    {
       // TODO: Implement factoryMethod() method.
-      $carProduct = new CarProduct();
-      return $carProduct->getProperties();
-  }
+      $this->country = $product;
+      return $this->country->getProperties();
+    }
 }

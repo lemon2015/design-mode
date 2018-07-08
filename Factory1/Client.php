@@ -1,24 +1,23 @@
 <?php
-require_once 'BikeFactory.php';
-require_once 'CarFactory.php';
+require_once 'CountryFactory.php';
+require_once 'CarProduct.php';
+require_once 'BikeProduct.php';
 
 class Client
 {
-    private $bikeOrder;
-    private $carOrder;
+    private $countryFactory;
 
     public function __construct()
     {
-        $this->bikeOrder = new BikeFactory();
-        $this->carOrder = new CarFactory();
+        $this->countryFactory = new CountryFactory();
     }
 
     public function GiveMeACar(){
-       return $this->carOrder->startFactory();
+       return $this->countryFactory->startFactory(new CarProduct());
     }
 
     public function GiveMeABike(){
-        return $this->bikeOrder->startFactory();
+        return $this->countryFactory->startFactory(new BikeProduct());
     }
 }
 
