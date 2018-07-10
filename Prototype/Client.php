@@ -1,6 +1,7 @@
 <?php
-require_once 'autoload.php';
-
+spl_autoload_register(function ($class) {
+    include $class . '.php';
+});
 class Client
 {
     //直接实例化
