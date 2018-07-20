@@ -10,6 +10,8 @@ class Client{
         $demo->addObserver(new observer1);
         $demo->addObserver(new observer2);
         $demo->trigger();
+        $demo->delObserver(new observer2);
+        $demo->trigger();
     }
 }
 
